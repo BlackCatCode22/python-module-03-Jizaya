@@ -1,21 +1,16 @@
-total = 0
-count = 0
+num = 0
+tot = 0.0
 
 while True:
-    user_input = input("Enter an integer (or 'done' to finish): ")
-    if user_input.lower() == "done":
+    sval = input('Enter a number: ')
+    if sval == 'done':
         break
     try:
-        num = int(user_input)
-        total += num
-        count += 1
-    except ValueError:
-        print("Invalid input. Please enter an integer.")
+        fval = float(sval)
+    except:
+        print('Invalid input.')
+        continue
+    num = num + 1
+    tot = tot + fval
 
-if count > 0:
-    average = total / count
-    print(f"Total: {total}")
-    print(f"Count: {count}")
-    print(f"Average: {average}")
-else:
-    print("No valid integers were entered.")
+print(tot,num,tot/num)
